@@ -1,8 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
-import css from 'components/PhoneForm/PhoneForm.module.css';
-import { addContact } from 'redux/contactsSlice';
-
+import css from './PhoneForm.module.css';
+// import { addContact } from 'redux/contactsSlice';
+import { addContact } from '../../redux/contactOperations';  ///  add 17/06/
+import React from 'react'
+// import ReactDOM from 'react-dom'
 export function Form() {
   const nameId = nanoid();
   const phoneId = nanoid();

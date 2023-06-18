@@ -1,7 +1,9 @@
 import { useSelector } from 'react-redux';
-
-import { Contact } from 'components/ContactList/ContactItem';
-import css from 'components/ContactList/ContactList.module.css';
+import React from 'react';
+// import ReactDOM from 'react-dom'
+// import { Contact } from 'components/ContactList/ContactItem';
+import {Contact} from './ContactItem';
+import css from './ContactList.module.css';
 export function Contacts() {
   const contacts = useSelector(state => state.contacts.contacts);
   const filterValue = useSelector(state => state.filterValue);

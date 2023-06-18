@@ -1,13 +1,19 @@
 import PropTypes from 'prop-types';
-import { removeContact } from 'redux/contactsSlice';
+import React from 'react'
+// import ReactDOM from 'react-dom'
+// import { removeContact } from 'redux/contactsSlice';
+import { deleteContact } from '../../redux/contactOperations';
+
+// import { useDispatch } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import css from 'components/ContactList/ContactList.module.css';
+// import css from '.ContactList.module.css';
+import css from './ContactList.module.css';
 
 export function Contact({ content, id }) {
   const dispatch = useDispatch();
 
   const onContactDelete = evt => {
-    dispatch(removeContact(evt.target.dataset.id));
+    dispatch(deleteContact(evt.target.dataset.id));
   };
 
   return (

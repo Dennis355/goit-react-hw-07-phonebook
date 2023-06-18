@@ -1,31 +1,31 @@
 import axios from 'axios';
-import createAsyncThunk from '@reduxjs/toolkit';
-axios.defaults.baseURL  = 'https://645d550f250a246ae31d7382.mockapi.io';
+import {createAsyncThunk} from '@reduxjs/toolkit';
+axios.defaults.baseURL  = 'https://645d550f250a246ae31d7382.mockapi.io/contacts';
 // 645d550f250a246ae31d7382.mockapi.io
 
-export const fetchContacts = createAsyncThunk(
-    'contacts/fetchContacts',
-    async (_, thunkAPI) => {
-      try {
-        const response = await axios.get('/contacts');
-        return response.data;
-      } catch (error) {
-        return thunkAPI.rejectWithValue(error.message);
-      }
-    }
-  );
-////////////////////// аналог /////////////////////
 // export const fetchContacts = createAsyncThunk(
 //     'contacts/fetchContacts',
-//     async () => {
+//     async (_, thunkAPI) => {
 //       try {
-//         const response = await axios.get('https://645d550f250a246ae31d7382.mockapi.io/contacts');
+//         const response = await axios.get('/contacts');
 //         return response.data;
 //       } catch (error) {
-//         throw new Error('Error fetching contacts');
+//         return thunkAPI.rejectWithValue(error.message);
 //       }
 //     }
 //   );
+////////////////////// аналог /////////////////////
+export const fetchContacts = createAsyncThunk(
+    'contacts/fetchContacts',
+    async () => {
+      try {
+        const response = await axios.get('https://645d550f250a246ae31d7382.mockapi.io/contacts/contacts');
+        return response.data;
+      } catch (error) {
+        throw new Error('Error fetching contacts');
+      }
+    }
+  );
 
 
 

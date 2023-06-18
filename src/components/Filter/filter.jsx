@@ -1,6 +1,14 @@
+// import  Component   from 'react';
+import React from 'react';
+// import ReactDOM from 'react-dom'
 import { useSelector, useDispatch } from 'react-redux';
-import css from 'components/Filter/Filter.module.css';
-import { filterContact } from 'redux/filterSlice';
+// import css from 'components/Filter/Filter.module.css';
+import css from './Filter.module.css';
+// import { filterContact } from './redux/filterSlice';
+// import { filterContact} from 'redux/filterSlice';
+import { filterContact } from '../../redux/filterSlice';
+
+
 
 export function Search() {
   const filterValue = useSelector(state => state.filterValue);
