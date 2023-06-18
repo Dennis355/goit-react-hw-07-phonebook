@@ -1,14 +1,8 @@
 import PropTypes from 'prop-types';
-import React from 'react'
-// import ReactDOM from 'react-dom'
-// import { removeContact } from 'redux/contactsSlice';
+import React from 'react';
 import { deleteContact } from '../../redux/contactOperations';
-
-// import { useDispatch } from 'react-redux';
 import { useDispatch } from 'react-redux';
-// import css from '.ContactList.module.css';
 import css from './ContactList.module.css';
-
 export function Contact({ content, id }) {
   const dispatch = useDispatch();
 
@@ -17,12 +11,16 @@ export function Contact({ content, id }) {
   };
 
   return (
-    <div className={css.contact_li}> 
+    <div className={css.contact_li}>
       {content}{' '}
-      <div className={css.contact_btndell} data-id={id} onClick={onContactDelete}>
+      <div
+        className={css.contact_btndell}
+        data-id={id}
+        onClick={onContactDelete}
+      >
         Delete
       </div>
-      </div>
+    </div>
   );
 }
 

@@ -1,10 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
 import css from './PhoneForm.module.css';
-// import { addContact } from 'redux/contactsSlice';
-import { addContact } from '../../redux/contactOperations';  ///  add 17/06/
-import React from 'react'
-// import ReactDOM from 'react-dom'
+import { addContact } from '../../redux/contactOperations';
+import React from 'react';
 export function Form() {
   const nameId = nanoid();
   const phoneId = nanoid();
@@ -58,8 +56,6 @@ export function Form() {
                   title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                   required
                   id={nameId}
-                  // value={name}
-                  // onChange={handlerInputChange}
                 />
               </label>
             </div>
@@ -75,8 +71,6 @@ export function Form() {
                 title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                 required
                 id={phoneId}
-                // onChange={handlerInputChange}
-                // value={number}
               />
             </label>
           </section>
